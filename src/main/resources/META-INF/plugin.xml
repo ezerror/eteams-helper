@@ -1,18 +1,20 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.ezerror.eteamshelper</id>
-    <name>IntelliJ Platform Plugin eteams-helper</name>
-    <vendor>ezerror</vendor>
+  <id>com.weaver.shiyuan.eteamshelper</id>
+  <name>Eteams Toolkit</name>
+  <vendor>shiyuan</vendor>
 
-    <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.java</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.ezerror.eteamshelper.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.ezerror.eteamshelper.services.MyProjectService"/>
-    </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.ezerror.eteamshelper.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+  <extensions defaultExtensionNs="com.intellij">
+    <toolWindow factoryClass="com.weaver.shiyuan.metabase.window.ReferenceListWindowFactory" id="调用链关系" anchor="right" icon="/images/icon.svg">
+    </toolWindow>
+    
+    <codeInsight.lineMarkerProvider language="JAVA"
+                                    implementationClass="com.weaver.shiyuan.metabase.linkMarker.ReferenceLineMarker">
+    </codeInsight.lineMarkerProvider>
+  </extensions>
+
 </idea-plugin>

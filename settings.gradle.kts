@@ -1,1 +1,1 @@
-rootProject.name = "eteams-helper"
+rootProject.name = "Eteams Toolkit"
